@@ -1,23 +1,44 @@
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
 import logo from './logo.svg';
 import './App.css';
 
+const useStyles = makeStyles((theme) => ({
+  appbar: {
+    backgroundColor: '#fff',
+  },
+  hero: {
+    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1558981852-426c6c22a060?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80')`,
+    height: '500px',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    position: 'relative',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: '#fff',
+    fontSize: '4rem'
+  }
+}));
+
 function App() {
+  const classes = useStyles();
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppBar className={classes.appbar} position="static">
+        <Toolbar>
+          <Typography variant="h6" color="primary">
+            Blog
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <Box className={classes.hero}>
+        <Box>React Blog</Box>
+      </Box>
     </div>
   );
 }

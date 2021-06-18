@@ -59,8 +59,11 @@ function App() {
         <Typography variant="h4" className={classes.blogTitle}>
           Articles
         </Typography>
+        {/*-----Container Grid------*/}
         <Grid container spacing={3}>
+          {/*-----Item Grid-------*/}
           <Grid item xs={12} sm={6} md={4}>
+            {/*------Card------*/}
             <Card className={classes.card}>
               <CardActionArea>
                 <CardMedia

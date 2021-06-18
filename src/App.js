@@ -3,8 +3,8 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
-import { Card, Container, Grid, CardActionArea, CardMedia, CardContent, CardActions } from '@material-ui/core';
-
+import { Card, Container, Grid, CardActionArea, CardMedia, CardContent, CardActions, Avatar } from '@material-ui/core';
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
@@ -35,6 +35,14 @@ const useStyles = makeStyles((theme) => ({
   },
   media: {
     height: 240
+  },
+  cardActions: {
+    display: 'flex',
+    margin: "0 10px",
+    justifyContent: 'space-between'
+  },
+  author: {
+    display: 'flex',
   }
 }));
 
@@ -81,8 +89,21 @@ function App() {
                   </Typography>
                 </CardContent>
               </CardActionArea>
-              <CardActions>
-                
+              <CardActions className={classes.cardActions}> 
+                <Box className={classes.author}>
+                  <Avatar src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"/>
+                  <Box ml={2}>
+                    <Typography variant="subtitle2" component="p">
+                      Guy Clemons
+                    </Typography>
+                    <Typography variant="subtitle2" color="textSecondary" component="p">
+                      June 18, 2021
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box>
+                  <BookmarkBorderIcon />
+                </Box>
               </CardActions>
             </Card>
           </Grid>
